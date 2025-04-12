@@ -1,0 +1,941 @@
+{
+  "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
+  "id": "net.schmidt-cisternas.pcc-alt",
+  "version": "1.1.14",
+  "compatibility": ">=5.0.0",
+  "sdk": 3,
+  "platforms": [
+    "local"
+  ],
+  "name": {
+    "en": "Panasonic Comfort Cloud Alternative"
+  },
+  "description": {
+    "en": "Supports some Panasonic AC devices."
+  },
+  "category": [
+    "climate"
+  ],
+  "permissions": [],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png",
+    "xlarge": "/assets/images/xlarge.png"
+  },
+  "author": {
+    "name": "Robert Schmidt",
+    "email": "robert@schmidt-cisternas.net"
+  },
+  "contributors": {
+    "developers": []
+  },
+  "source": "https://github.com/ugumba/homey-panasonic-comfort-cloud-alt",
+  "bugs": {
+    "url": "https://github.com/ugumba/homey-panasonic-comfort-cloud-alt/issues"
+  },
+  "flow": {
+    "actions": [
+      {
+        "title": {
+          "en": "DEPRECATED: Change the Left/Right Air Swing"
+        },
+        "deprecated": true,
+        "titleFormatted": {
+          "en": "DEPRECATED: Change the Left/Right Air Swing to [[direction]]"
+        },
+        "args": [
+          {
+            "type": "dropdown",
+            "name": "direction",
+            "title": {
+              "en": "Direction"
+            },
+            "values": [
+              {
+                "id": "Left",
+                "label": {
+                  "en": "Left"
+                }
+              },
+              {
+                "id": "LeftMid",
+                "label": {
+                  "en": "LeftMid"
+                }
+              },
+              {
+                "id": "Mid",
+                "label": {
+                  "en": "Mid"
+                }
+              },
+              {
+                "id": "RightMid",
+                "label": {
+                  "en": "RightMid"
+                }
+              },
+              {
+                "id": "Right",
+                "label": {
+                  "en": "Right"
+                }
+              }
+            ]
+          }
+        ],
+        "id": "change-air-swing-leftright"
+      },
+      {
+        "title": {
+          "en": "DEPRECATED: Change the Up/Down Air Swing"
+        },
+        "deprecated": true,
+        "titleFormatted": {
+          "en": "DEPRECATED: Change the Up/Down Air Swing to [[direction]]"
+        },
+        "args": [
+          {
+            "type": "dropdown",
+            "name": "direction",
+            "title": {
+              "en": "Direction"
+            },
+            "values": [
+              {
+                "id": "Up",
+                "label": {
+                  "en": "Up"
+                }
+              },
+              {
+                "id": "UpMid",
+                "label": {
+                  "en": "UpMid"
+                }
+              },
+              {
+                "id": "Mid",
+                "label": {
+                  "en": "Mid"
+                }
+              },
+              {
+                "id": "DownMid",
+                "label": {
+                  "en": "DownMid"
+                }
+              },
+              {
+                "id": "Down",
+                "label": {
+                  "en": "Down"
+                }
+              }
+            ]
+          }
+        ],
+        "id": "change-air-swing-updown"
+      },
+      {
+        "title": {
+          "en": "DEPRECATED: Change Eco Mode"
+        },
+        "deprecated": true,
+        "titleFormatted": {
+          "en": "DEPRECATED: Change the Eco Mode to [[mode]]"
+        },
+        "args": [
+          {
+            "type": "dropdown",
+            "name": "mode",
+            "title": {
+              "en": "Mode"
+            },
+            "values": [
+              {
+                "id": "Auto",
+                "label": {
+                  "en": "Auto"
+                }
+              },
+              {
+                "id": "Powerful",
+                "label": {
+                  "en": "Powerful"
+                }
+              },
+              {
+                "id": "Quiet",
+                "label": {
+                  "en": "Quiet"
+                }
+              }
+            ]
+          }
+        ],
+        "id": "change-eco-mode"
+      },
+      {
+        "title": {
+          "en": "DEPRECATED: Change Fan Speed"
+        },
+        "deprecated": true,
+        "titleFormatted": {
+          "en": "DEPRECATED: Change the Fan Speed to [[speed]]"
+        },
+        "args": [
+          {
+            "type": "dropdown",
+            "name": "speed",
+            "title": {
+              "en": "Speed"
+            },
+            "values": [
+              {
+                "id": "Auto",
+                "label": {
+                  "en": "Auto"
+                }
+              },
+              {
+                "id": "Low",
+                "label": {
+                  "en": "Low"
+                }
+              },
+              {
+                "id": "LowMid",
+                "label": {
+                  "en": "LowMid"
+                }
+              },
+              {
+                "id": "Mid",
+                "label": {
+                  "en": "Mid"
+                }
+              },
+              {
+                "id": "HighMid",
+                "label": {
+                  "en": "HighMid"
+                }
+              },
+              {
+                "id": "High",
+                "label": {
+                  "en": "High"
+                }
+              }
+            ]
+          }
+        ],
+        "id": "change-fan-speed"
+      },
+      {
+        "title": {
+          "en": "DEPRECATED: Change Operation Mode"
+        },
+        "deprecated": true,
+        "titleFormatted": {
+          "en": "DEPRECATED: Change the Operation Mode to [[mode]]"
+        },
+        "args": [
+          {
+            "type": "dropdown",
+            "name": "mode",
+            "title": {
+              "en": "Mode"
+            },
+            "values": [
+              {
+                "id": "Auto",
+                "label": {
+                  "en": "Auto"
+                }
+              },
+              {
+                "id": "Dry",
+                "label": {
+                  "en": "Dry"
+                }
+              },
+              {
+                "id": "Cool",
+                "label": {
+                  "en": "Cool"
+                }
+              },
+              {
+                "id": "Heat",
+                "label": {
+                  "en": "Heat"
+                }
+              },
+              {
+                "id": "Fan",
+                "label": {
+                  "en": "Fan"
+                }
+              }
+            ]
+          }
+        ],
+        "id": "change-operation-mode"
+      },
+      {
+        "id": "device-change-air-swing-leftright",
+        "title": {
+          "en": "Change Air Swing Left/Right"
+        },
+        "titleFormatted": {
+          "en": "Change Air Swing Left/Right to [[direction]]"
+        },
+        "hint": {
+          "en": "Choose air direction left/right"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=aircon"
+          },
+          {
+            "type": "dropdown",
+            "name": "direction",
+            "values": [
+              {
+                "id": "Left",
+                "label": {
+                  "en": "Left"
+                }
+              },
+              {
+                "id": "LeftMid",
+                "label": {
+                  "en": "LeftMid"
+                }
+              },
+              {
+                "id": "Mid",
+                "label": {
+                  "en": "Mid"
+                }
+              },
+              {
+                "id": "RightMid",
+                "label": {
+                  "en": "RightMid"
+                }
+              },
+              {
+                "id": "Right",
+                "label": {
+                  "en": "Right"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "device-change-air-swing-updown",
+        "title": {
+          "en": "Change Air Swing Up/Down"
+        },
+        "titleFormatted": {
+          "en": "Change Air Swing Up/Down to [[direction]]"
+        },
+        "hint": {
+          "en": "Choose air direction up/down"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=aircon"
+          },
+          {
+            "type": "dropdown",
+            "name": "direction",
+            "values": [
+              {
+                "id": "Up",
+                "label": {
+                  "en": "Up"
+                }
+              },
+              {
+                "id": "UpMid",
+                "label": {
+                  "en": "UpMid"
+                }
+              },
+              {
+                "id": "Mid",
+                "label": {
+                  "en": "Mid"
+                }
+              },
+              {
+                "id": "DownMid",
+                "label": {
+                  "en": "DownMid"
+                }
+              },
+              {
+                "id": "Down",
+                "label": {
+                  "en": "Down"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "device-change-eco-mode",
+        "title": {
+          "en": "Change Eco Mode"
+        },
+        "titleFormatted": {
+          "en": "Change Eco Mode to [[mode]]"
+        },
+        "hint": {
+          "en": "Choose eco mode"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=aircon"
+          },
+          {
+            "type": "dropdown",
+            "name": "mode",
+            "values": [
+              {
+                "id": "Auto",
+                "label": {
+                  "en": "Auto"
+                }
+              },
+              {
+                "id": "Powerful",
+                "label": {
+                  "en": "Powerful"
+                }
+              },
+              {
+                "id": "Quiet",
+                "label": {
+                  "en": "Quiet"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "device-change-fan-speed",
+        "title": {
+          "en": "Change Fan Speed"
+        },
+        "titleFormatted": {
+          "en": "Change Fan Speed to [[speed]]"
+        },
+        "hint": {
+          "en": "Choose fan speed"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=aircon"
+          },
+          {
+            "type": "dropdown",
+            "name": "speed",
+            "values": [
+              {
+                "id": "Auto",
+                "label": {
+                  "en": "Auto"
+                }
+              },
+              {
+                "id": "Low",
+                "label": {
+                  "en": "Low"
+                }
+              },
+              {
+                "id": "LowMid",
+                "label": {
+                  "en": "LowMid"
+                }
+              },
+              {
+                "id": "Mid",
+                "label": {
+                  "en": "Mid"
+                }
+              },
+              {
+                "id": "HighMid",
+                "label": {
+                  "en": "HighMid"
+                }
+              },
+              {
+                "id": "High",
+                "label": {
+                  "en": "High"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "device-change-operation-mode",
+        "title": {
+          "en": "Change Operation Mode"
+        },
+        "titleFormatted": {
+          "en": "Change Operation Mode to [[mode]]"
+        },
+        "hint": {
+          "en": "Choose operation mode"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=aircon"
+          },
+          {
+            "type": "dropdown",
+            "name": "mode",
+            "values": [
+              {
+                "id": "Auto",
+                "label": {
+                  "en": "Auto"
+                }
+              },
+              {
+                "id": "Dry",
+                "label": {
+                  "en": "Dry"
+                }
+              },
+              {
+                "id": "Cool",
+                "label": {
+                  "en": "Cool"
+                }
+              },
+              {
+                "id": "Heat",
+                "label": {
+                  "en": "Heat"
+                }
+              },
+              {
+                "id": "Fan",
+                "label": {
+                  "en": "Fan"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "drivers": [
+    {
+      "name": {
+        "en": "AirCon"
+      },
+      "class": "thermostat",
+      "capabilities": [
+        "target_temperature",
+        "measure_temperature",
+        "measure_temperature_outside",
+        "onoff",
+        "operation_mode",
+        "eco_mode",
+        "fan_auto_mode",
+        "fan_speed",
+        "air_swing_lr",
+        "air_swing_ud",
+        "nanoe_mode",
+        "measure_avg_consumption_wh"
+      ],
+      "capabilitiesOptions": {
+        "measure_avg_consumption_wh": {
+          "approximated": true,
+          "preventTag": true
+        }
+      },
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "cloud"
+      ],
+      "images": {
+        "small": "/drivers/aircon/assets/images/small.png",
+        "large": "/drivers/aircon/assets/images/large.png",
+        "xlarge": "/drivers/aircon/assets/images/xlarge.png"
+      },
+      "pair": [
+        {
+          "id": "list_my_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_my_devices"
+          }
+        },
+        {
+          "id": "add_my_devices",
+          "template": "add_devices"
+        }
+      ],
+      "id": "aircon",
+      "settings": [
+        {
+          "id": "alwayson",
+          "type": "checkbox",
+          "label": {
+            "en": "Always on",
+            "no": "Alltid på"
+          },
+          "value": false,
+          "hint": {
+            "en": "Keep device on.",
+            "no": "Forhindre at Homey slår av denne enheten."
+          }
+        }
+      ]
+    }
+  ],
+  "capabilities": {
+    "air_swing_lr": {
+      "type": "enum",
+      "title": {
+        "en": "Air Swing LR"
+      },
+      "uiComponent": "picker",
+      "getable": true,
+      "setable": true,
+      "values": [
+        {
+          "id": "Left",
+          "title": {
+            "en": "Left"
+          }
+        },
+        {
+          "id": "LeftMid",
+          "title": {
+            "en": "LeftMid"
+          }
+        },
+        {
+          "id": "Mid",
+          "title": {
+            "en": "Mid"
+          }
+        },
+        {
+          "id": "RightMid",
+          "title": {
+            "en": "RightMid"
+          }
+        },
+        {
+          "id": "Right",
+          "title": {
+            "en": "Right"
+          }
+        }
+      ]
+    },
+    "air_swing_ud": {
+      "type": "enum",
+      "title": {
+        "en": "Air Swing UD"
+      },
+      "uiComponent": "picker",
+      "getable": true,
+      "setable": true,
+      "values": [
+        {
+          "id": "Up",
+          "title": {
+            "en": "Up"
+          }
+        },
+        {
+          "id": "UpMid",
+          "title": {
+            "en": "UpMid"
+          }
+        },
+        {
+          "id": "Mid",
+          "title": {
+            "en": "Mid"
+          }
+        },
+        {
+          "id": "DownMid",
+          "title": {
+            "en": "DownMid"
+          }
+        },
+        {
+          "id": "Down",
+          "title": {
+            "en": "Down"
+          }
+        }
+      ]
+    },
+    "eco_mode": {
+      "type": "enum",
+      "title": {
+        "en": "Eco Mode"
+      },
+      "uiComponent": "picker",
+      "getable": true,
+      "setable": true,
+      "values": [
+        {
+          "id": "Auto",
+          "title": {
+            "en": "Auto"
+          }
+        },
+        {
+          "id": "Powerful",
+          "title": {
+            "en": "Powerful"
+          }
+        },
+        {
+          "id": "Quiet",
+          "title": {
+            "en": "Quiet"
+          }
+        }
+      ]
+    },
+    "fan_auto_mode": {
+      "type": "enum",
+      "title": {
+        "en": "Fan Auto Mode"
+      },
+      "uiComponent": "picker",
+      "getable": true,
+      "setable": true,
+      "values": [
+        {
+          "id": "Disabled",
+          "title": {
+            "en": "Disabled"
+          }
+        },
+        {
+          "id": "AirSwingAuto",
+          "title": {
+            "en": "AirSwingAuto"
+          }
+        },
+        {
+          "id": "AirSwingLR",
+          "title": {
+            "en": "AirSwingLR"
+          }
+        },
+        {
+          "id": "AirSwingUD",
+          "title": {
+            "en": "AirSwingUD"
+          }
+        }
+      ]
+    },
+    "fan_speed": {
+      "type": "enum",
+      "title": {
+        "en": "Fan Speed"
+      },
+      "uiComponent": "picker",
+      "getable": true,
+      "setable": true,
+      "values": [
+        {
+          "id": "Auto",
+          "title": {
+            "en": "Auto"
+          }
+        },
+        {
+          "id": "Low",
+          "title": {
+            "en": "Low"
+          }
+        },
+        {
+          "id": "LowMid",
+          "title": {
+            "en": "LowMid"
+          }
+        },
+        {
+          "id": "Mid",
+          "title": {
+            "en": "Mid"
+          }
+        },
+        {
+          "id": "HighMid",
+          "title": {
+            "en": "HighMid"
+          }
+        },
+        {
+          "id": "High",
+          "title": {
+            "en": "High"
+          }
+        }
+      ]
+    },
+    "measure_avg_consumption_wh": {
+      "type": "number",
+      "title": {
+        "en": "Average W last hour",
+        "no": "Snitt W siste time"
+      },
+      "uiComponent": "sensor",
+      "units": {
+        "en": "W"
+      },
+      "icon": "assets/bolt.svg",
+      "getable": true,
+      "setable": false,
+      "insights": true,
+      "insightsTitleTrue": {
+        "en": "Avg W per hour",
+        "no": "Snitt W per time"
+      }
+    },
+    "measure_temperature_outside": {
+      "type": "number",
+      "title": {
+        "en": "Outside Temperature",
+        "no": "Temperatur Ute"
+      },
+      "uiComponent": "sensor",
+      "units": {
+        "en": "°C"
+      },
+      "icon": "assets/measure_temperature.svg",
+      "getable": true,
+      "setable": false,
+      "insights": true,
+      "insightsTitleTrue": {
+        "en": "Temperature Outside",
+        "no": "Temperatur Ute"
+      }
+    },
+    "nanoe_mode": {
+      "type": "enum",
+      "title": {
+        "en": "Nanoe Mode"
+      },
+      "uiComponent": "picker",
+      "getable": true,
+      "setable": true,
+      "values": [
+        {
+          "id": "Unavailable",
+          "title": {
+            "en": "Unavailable"
+          }
+        },
+        {
+          "id": "Off",
+          "title": {
+            "en": "Off"
+          }
+        },
+        {
+          "id": "On",
+          "title": {
+            "en": "On"
+          }
+        },
+        {
+          "id": "ModeG",
+          "title": {
+            "en": "ModeG"
+          }
+        },
+        {
+          "id": "All",
+          "title": {
+            "en": "All"
+          }
+        }
+      ]
+    },
+    "operation_mode": {
+      "type": "enum",
+      "title": {
+        "en": "Operation Mode"
+      },
+      "uiComponent": "picker",
+      "getable": true,
+      "setable": true,
+      "values": [
+        {
+          "id": "Auto",
+          "title": {
+            "en": "Auto"
+          }
+        },
+        {
+          "id": "Dry",
+          "title": {
+            "en": "Dry"
+          }
+        },
+        {
+          "id": "Cool",
+          "title": {
+            "en": "Cool"
+          }
+        },
+        {
+          "id": "Heat",
+          "title": {
+            "en": "Heat"
+          }
+        },
+        {
+          "id": "Fan",
+          "title": {
+            "en": "Fan"
+          }
+        }
+      ]
+    }
+  }
+}

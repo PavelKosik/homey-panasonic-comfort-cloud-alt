@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- The '/homey.js' script must be included in your settings view to work -->
+    <script
+      type="text/javascript"
+      src="/homey.js"
+      data-origin="settings"
+    ></script>
+  </head>
+  <body>
+    <header class="homey-header">
+      <h1 class="homey-title" data-i18n="settings.title">
+        <!-- This will be filled with the translated string with key 'settings.title'. -->
+      </h1>
+      <p class="homey-subtitle" data-i18n="settings.subtitle">
+        <!-- This field will also be translated -->
+      </p>
+    </header>
+
+    <fieldset class="homey-form-fieldset">
+      <legend class="homey-form-legend">Credentials</legend>
+
+      <div class="homey-form-group">
+        <label class="homey-form-label" for="username">Username</label>
+        <input class="homey-form-input" id="username" type="text" value="" />
+      </div>
+      <div class="homey-form-group">
+        <label class="homey-form-label" for="password">Password</label>
+        <input class="homey-form-input" id="password" type="password" value="" />
+      </div>
+    </fieldset>
+
+    <button id="save" class="homey-button-primary-full">Authenticate</button>
+
+    <fieldset class="homey-form-fieldset">
+      <legend class="homey-form-legend">Log (last 500 lines)</legend>
+      <div class="homey-form-group">
+        <textarea rows="30" cols="80" wrap="off" id="log" style='font: 10px monospace'></textarea>
+      </div>
+    </fieldset>  
+
+    <script type="text/javascript">
+      // a method named 'onHomeyReady' must be present in your code
+      function onHomeyReady(Homey) {
+        // Tell Homey we're ready to be displayed
+        Homey.ready();
+
+        var usernameElement = document.getElementById("username");
+        var passwordElement = document.getElementById("password");
+        var saveElement = document.getElementById("save");
+        var logElement = document.getElementById("log");
+
+        Homey.get("username", function (err, username) {
+          if (err) return handleError(err);
+          usernameElement.value = username;
+        });
+
+        Homey.get("password", function (err, password) {
+          if (err) return handleError(err);
+          passwordElement.value = password;
+        });
+
+        refreshLog();
+        logElement.scrollTop = logElement.scrollHeight;
+        setInterval(refreshLog, 5000);
+
+        let saveTimer = undefined;
+        saveElement.addEventListener("click", function (e) {
+          clearTimeout(saveTimer);
+          saveElement.textContent = "Saving...";
+          Homey.set("username", usernameElement.value, handleError);
+          Homey.set("password", passwordElement.value, handleError);
+          saveElement.textContent = "Saved!";
+          saveTimer = setTimeout(() => saveElement.textContent = "Authenticate", 1500);
+        });
+
+        function refreshLog() {
+          Homey.get("log", function (err, log) {
+            if (err) return handleError(err);
+            logElement.value = log;
+          });
+        }
+      }
+
+      function handleError(err) {
+        if (err) return Homey.alert(err);
+      }
+    </script>
+  </body>
+</html>
