@@ -14,7 +14,7 @@ export class MyDevice extends Homey.Device {
   driver: MyDriver = this.driver as MyDriver;
   timer: NodeJS.Timer|null = null; 
   alwaysOn: boolean = false;
-
+  
   async setCap<T>(name:string, value:T) {
     // Try adding the capability if it does not exist
     if (!this.hasCapability(name)) {
@@ -29,8 +29,8 @@ export class MyDevice extends Homey.Device {
 
   // Getting the timezone offset in minutes
   getOffset(timeZone: any = 'UTC', date: any = new Date()) {
-    const utcDate = new Date(date.toLocaleString('en-US', { timeZone: 'UTC' }));
-    const tzDate = new Date(date.toLocaleString('en-US', { timeZone }));
+    const utcDate = new Date(date.toLocaleString('cs-CZ', { timeZone: 'UTC' }));
+    const tzDate = new Date(date.toLocaleString('cs-CZ', { timeZone }));
     return (tzDate.getTime() - utcDate.getTime()) / 6e4;
   }
   
